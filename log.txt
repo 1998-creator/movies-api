@@ -19,3 +19,9 @@ Timestamp: Wed Mar 17 2021 17:35:24 GMT-0400 (Eastern Daylight Time)
 URL: /favicon.ico
 Timestamp: Wed Mar 17 2021 17:35:25 GMT-0400 (Eastern Daylight Time)
 
+URL: /DevMgmt/ProductConfigDyn.xml
+Timestamp: Wed Mar 17 2021 22:02:11 GMT-0400 (Eastern Daylight Time)
+
+URL: /DevMgmt/DiscoveryTree.xml
+Timestamp: Wed Mar 17 2021 22:02:12 GMT-0400 (Eastern Daylight Time)
+
