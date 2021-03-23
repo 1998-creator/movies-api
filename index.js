@@ -21,50 +21,50 @@ app.use(morgan('common'));
 
 let movies = [
   {
-    title: 'Harry Potter and the Sorcerer\'s Stone',
-    director: 'J.K. Rowling'
+    title: 'Platoon',
+    director: 'Oliver Stone'
+  },
+  {
+    title: 'The Prestige',
+    director: 'Christopher Nolan'
+  },
+  {
+    title: 'Pulp Fiction',
+    director: 'Quentin Tarantino'
   },
   {
     title: 'Lord of the Rings',
-    director: 'J.R.R. Tolkien'
+    director: 'Peter Jackson'
   },
   {
-    title: 'Twilight',
-    director: 'Stephanie Meyer'
+    title: 'Alien',
+    director: 'Ridley Scott'
   },
   {
-    title: 'Lord of the Rings',
-    director: 'J.R.R. Tolkien'
+    title: 'Fight Club',
+    director: 'David Fincher'
   },
   {
-    title: 'Lord of the Rings',
-    director: 'J.R.R. Tolkien'
+    title: 'Se7en',
+    director: 'David Fincher'
   },
   {
-    title: 'Lord of the Rings',
-    director: 'J.R.R. Tolkien'
+    title: 'The Usual Suspects',
+    director: 'Bryan Singer'
   },
   {
-    title: 'Lord of the Rings',
-    director: 'J.R.R. Tolkien'
+    title: 'The Departed',
+    director: 'Martin Scorsese'
   },
   {
-    title: 'Lord of the Rings',
-    director: 'J.R.R. Tolkien'
-  },
-  {
-    title: 'Lord of the Rings',
-    director: 'J.R.R. Tolkien'
-  },
-  {
-    title: 'Lord of the Rings',
-    director: 'J.R.R. Tolkien'
+    title: 'The Shining',
+    director: 'Stanley Kubrick'
   }
 ];
 
 // GET requests
 app.get('/', (req, res) => {
-  res.send('Welcome to my book club!');
+  res.send('Welcome to my movie club!');
 });
 
 app.get('/documentation', (req, res) => {                  
