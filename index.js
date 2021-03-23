@@ -18,6 +18,7 @@ app.use((err, req, res, next) => {
   });
 
 app.use(morgan('common'));
+app.use(express.static('public'));
 
 let movies = [
   {
