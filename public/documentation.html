@@ -1,140 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>This is the Documentation Page</h1>
 
     <div>
-        <h3>Endpoint Documentation:</h3>
-        <table>
-          <tr>
-            <th>Description</th>
-            <th>URL (Endpoint)</th>
-            <th>HTTP Method</th>
-            <th>Query Parameters</th>
-            <th>Request Body Data Format</th>
-            <th>Request Example</th>
-            <th>Response Body Data Format</th>
-            <th>Response Example</th>
-          </tr>
-          <tr>
-            <td>Returns a list of all movies</td>
-            <td>/movies</td>
-            <td>GET</td>
-            <td>None</td>
-            <td>None</td>
-            <td>/movies</td>
-            <td>JSON
-            <td>{<br>Genre: { <br>Name: Adventure,<br>Description: Adventure films are a genre of film whose plots feature elements of travel. They typically
-              involve protagonists who must leave their home or place of comfort and go to far away lands to fulfill a goal. Settings play an important
-              role in adventure films, sometimes as big as the characters themselves.<br>},<br><br>Director: {<br>Name: Gore Verbinski,<br>Bio: Gregor
-              Justin 'Gore' Verbinski is an American film director, screenwriter, producer, and musician. He is best known for directing The Ring, the Pirates
-              of the Caribbean films, and Rango.,<br>Birth: 3/15/1964,<br>Death: N/A<br>},<br><br>_id: "5b6c88930",<br><br>Title: Pirates of the Caribbean: The
-              Curse of the Black Pearl,<br><br>Description: Capt. Jack Sparrow (Johnny Depp) arrives at Port Royal in the Caribbean without a ship or crew. His
-              timing is inopportune, however, because later that evening the town is besieged by a pirate ship. The pirates kidnap the governor's daughter,
-              Elizabeth (Keira Knightley), who is in possession of a valuable coin that is linked to a curse that has transformed the pirates into the undead.
-              A gallant blacksmith (Orlando Bloom) in love with Elizabeth allies with Sparrow in pursuit of the pirates.,<br><br>ImagePath: "piratesofthecaribbeanblackpearl.jpg",
-              <br><br>Featured: false<br>}</td>
-          </tr>
-          <tr>
-            <td>Returns data about a single movie by title</td>
-            <td>/movies/:Title</td>
-            <td>GET</td>
-            <td>Use "_" for spaces (when needed)</td>
-            <td>None</td>
-            <td>/movies/pirates_of_the_caribbean
-            <td>JSON</td>
-            <td>{<br>Genre: { <br>Name: Adventure,<br>Description: Adventure films are a genre of film whose plots feature elements of travel. They typically
-              involve protagonists who must leave their home or place of comfort and go to far away lands to fulfill a goal. Settings play an important
-              role in adventure films, sometimes as big as the characters themselves.<br>},<br><br>Director: {<br>Name: Gore Verbinski,<br>Bio: Gregor
-              Justin 'Gore' Verbinski is an American film director, screenwriter, producer, and musician. He is best known for directing The Ring, the Pirates
-              of the Caribbean films, and Rango.,<br>Birth: 3/15/1964,<br>Death: N/A<br>},<br><br>_id: "5b6c88930",<br><br>Title: Pirates of the Caribbean: The
-              Curse of the Black Pearl,<br><br>Description: Capt. Jack Sparrow (Johnny Depp) arrives at Port Royal in the Caribbean without a ship or crew. His
-              timing is inopportune, however, because later that evening the town is besieged by a pirate ship. The pirates kidnap the governor's daughter,
-              Elizabeth (Keira Knightley), who is in possession of a valuable coin that is linked to a curse that has transformed the pirates into the undead.
-              A gallant blacksmith (Orlando Bloom) in love with Elizabeth allies with Sparrow in pursuit of the pirates.,<br><br>ImagePath: "piratesofthecaribbeanblackpearl.jpg",
-              <br><br>Featured: false<br>}</td>
-          <tr>
-            <td>Returns information about a genre by name/title</td>
-            <td>/movies/Genres/:Title</td>
-            <td>GET</td>
-            <td>Use "_" for spaces (when needed)</td>
-            <td>None</td>
-            <td>/movies/Genres/lord_of_the_rings</td>
-            <td>JSON</td>
-            <td>{<br>Fantasy. Description: Fantasy films are films that belong to the fantasy genre with fantastic themes, usually magic,
-              supernatural events, mythology, folklore, or exotic fantasy worlds. The genre is considered a form of speculative fiction alongside
-              science fiction films and horror films, although the genres do overlap.<br>}</td>
-          </tr>
-          <tr>
-            <td>Returns information about a director by name</td>
-            <td>/movies/Directors/:Name</td>
-            <td>GET</td>
-            <td>Use "_" for spaces (when needed)</td>
-            <td>None</td>
-            <td>/movies/Directors/Peter_Jackson</td>
-            <td>JSON</td>
-            <td>{<br>Peter Jackson: Sir Peter Robert Jackson is a New Zealand film director, producer, and screenwriter.
-              He is best known as the director, writer, and producer of the Lord of the Rings trilogy and the Hobbit trilogy.<br>}</td>
-          </tr>
-          <tr>
-            <td>Allows new users to register</td>
-            <td>/users</td>
-            <td>POST</td>
-            <td>None</td>
-            <td>JSON</td>
-            <td>{<br>Username: hnewcom,<br><br>Password: password1,<br><br>Email: hnewcom@hotmail.com,<br><br>Birthday: 06/02/1992<br>}</td>
-            <td>JSON</td>
-            <td>{<br>FavoriteMovies: [ ],<br>_id: 5feb2q494bb9238b023fg,<br>Username: hnewcom,<br><br>Password: password1,<br><br>Email: hnewcom@hotmail.com,<br><br>Birthday: 1992-06-02T04:00:00.000Z,<br>__v: 0<br>}</td>
-          </tr>
-          <tr>
-            <td>Allows users to update their user information</td>
-            <td>/users/:username</td>
-            <td>PUT</td>
-            <td>None</td>
-            <td>JSON</td>
-            <td>{<br>Username: hnewcom,<br><br>Password: password12345,<br><br>Email: hnewcom@hotmail.com,<br><br>Birthday: 06/02/1992<br>}</td>
-            <td>JSON</td>
-            <td>{<br>FavoriteMovies: [ ],<br>_id: 5feb2q494bb9238b023fg,<br>Username: hnewcom,<br><br>Password: password12345,<br><br>Email: hnewcom@hotmail.com,<br><br>Birthday: 1992-06-02T04:00:00.000Z,<br>__v: 1<br>}</td>
-          </tr>
-          <tr>
-            <td>Allows users to add a movie to their list of favorites</td>
-            <td>/users/:username/movies/:movieID</td>
-            <td>POST</td>
-            <td>None</td>
-            <td>JSON</td>
-            <td>{<br>_id: 5feb583nd95g4977<br>}</td>
-            <td>Message</td>
-            <td>{<br>FavoriteMovies: [<br>5febsfq24305bwe035g7892,<br>5febsfq24305bwe035g7824,<br>5febsfq24305bwe035g9873,<br>5febsfq24305bwe035g783,
-              <br>5feb583nd95g4977<br>],<br><br>Username: hnewcom,<br> Password: password1,<br>Email: hnewcom@hotmail.com,<br>Birthday: 06/02/1992T00:00:00.000Z<br>}</td>
-          </tr>
-          <tr>
-            <td>Allows users to remove a movie from their list of favorites</td>
-            <td>/users/:username/movies/:movieID</td>
-            <td>DELETE</td>
-            <td>None</td>
-            <td>None</td>
-            <td>/users/hnewcom/movies/5feb583nd95g4977</td>
-            <td>Message
-            <td>{<br>FavoriteMovies: [<br>5febsfq24305bwe035g7892,<br>5febsfq24305bwe035g7824,<br>5febsfq24305bwe035g9873,<br>5febsfq24305bwe035g783<br>],<br><br>Username: hnewcom,<br> Password: password1,<br>Email: hnewcom@hotmail.com,<br>Birthday: 06/02/1992T00:00:00.000Z<br>}</td>
-          </tr>
-          <tr>
-            <td>Allows existing users to deregister</td>
-            <td>/users/:username</td>
-            <td>DELETE</td>
-            <td>None</td>
-            <td>None</td>
-            <td>/users/hnewcom</td>
-            <td>Message</td>
-            <td>hnewcom was deleted.</td>
-          </tr>
-        </table>
-      </div>
+      <h3>Endpoint Documentation:</h3>
+      <table>
+        <tr>
+          <th>Description</th>
+          <th>URL (Endpoint)</th>
+          <th>HTTP Method</th>
+          <th>Query Parameters</th>
+          <th>Request Body Data Format</th>
+          <th>Request Example</th>
+          <th>Response Body Data Format</th>
+          <th>Response Example</th>
+        </tr>
+        <tr>
+          <td>Displays the opening message for the server</td>
+          <td>/</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>None</td>
+          <td>/</td>
+          <td>JSON</td>
+          <td>"Welcome to Flix Fix!" is displayed</td>
+        </tr>
+        <tr>
+          <td>Returns a list of all movies</td>
+          <td>/movies</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>None</td>
+          <td>/movies</td>
+          <td>JSON</td>
+          <td>
+            {<br />{ "id": 1, "Title": "Silence of the Lambs", "Description": "A
+            young FBI cadet must receive the help of an incarcerated and
+            manipulative cannibal killer to help catch another serial killer.",
+            "Genre": { "Name": "Thriller", "Description": "Thriller film, also
+            known as suspense film or suspense thriller, is a broad film genre
+            that involves excitement and suspense in the audience." },
+            "Director": { "Name": "Jonathan Demme", "Bio": "Robert Jonathan
+            Demme was an American director, producer, and screenwriter.",
+            "Birth": "1944", "Death": "2017" }, "ImagePath":
+            "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,677,1000_AL_.jpg",
+            "Featured": true }
+            <br />
+            <br />
+            Then the other four movies in the list would be displayed below this
+            one
+          </td>
+        </tr>
+        <tr>
+          <td>Returns data about a single movie by title<br /><br /></td>
+          <td>/movies/:Title</td>
+          <td>GET</td>
+          <td>Use "%20" for spaces (when needed)</td>
+          <td>None</td>
+          <td>/movies/Silence%20of%20the%20Lambs</td>
+          <td>JSON</td>
+          <td>Same movie data from above would appear</td>
+        </tr>
 
-</body>
+        <tr>
+          <td>Returns information about a genre by name<br /><br /></td>
+          <td>/movies/Genres/:Name</td>
+          <td>GET</td>
+          <td>Use "%20" for spaces (when needed)</td>
+          <td>None</td>
+          <td>/movies/genres/Thriller</td>
+          <td>JSON</td>
+          <td>Same movie data from above would appear</td>
+        </tr>
+        <tr>
+          <td>Returns information about movie using director name</td>
+          <td>/movies/director/:Name</td>
+          <td>GET</td>
+          <td>Use "%20" for spaces (when needed)</td>
+          <td>None</td>
+          <td>/movies/director/Jonathan%20Demme</td>
+          <td>JSON</td>
+          <td>Same movie data from above would appear</td>
+        </tr>
+        <tr>
+          <td>Returns a list of all users</td>
+          <td>/users</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>None</td>
+          <td>/users</td>
+          <td>JSON</td>
+          <td>
+            { id: 1,<br />
+            Username: "Hannah Keating",<br />
+            Password: "1234",<br />
+            Email: "h.monet1104@gmail.com",<br />
+            Birthday: "11/04/1990",<br />
+            FavoriteMovies: [],<br />
+            }<br />
+            <br />
+            The other users in the list would be displayed below this one
+          </td>
+        </tr>
+        <tr>
+          <td>Allows new users to be added</td>
+          <td>/users</td>
+          <td>POST</td>
+          <td>None</td>
+          <td>JSON</td>
+          <td>/users</td>
+          <td>JSON</td>
+          <td>"User added!" is displayed</td>
+        </tr>
+        <tr>
+          <td>Allows users to update their user information</td>
+          <td>/users/:username</td>
+          <td>PUT</td>
+          <td>Use "%20" for spaces (when needed)</td>
+          <td>JSON</td>
+          <td>/users/Hannah%20Keating</td>
+          <td>JSON</td>
+          <td>
+            {<br />FavoriteMovies: [ ],<br /><br />_id: 1,<br /><br />Username:
+            Hannah Keating,<br /><br />Password: 1234,<br /><br />Email:
+            h.monet1104@gmail.com,<br /><br />Birthday: 11/04/1990<br />}
+          </td>
+        </tr>
+        <tr>
+          <td>Returns data about a single user by username</td>
+          <td>/users/:username</td>
+          <td>GET</td>
+          <td>Use "%20" for spaces (when needed)</td>
+          <td>JSON</td>
+          <td>/users/Hannah%20Keating</td>
+          <td>JSON</td>
+          <td>
+            {<br />FavoriteMovies: [ ],<br /><br />_id: 1,<br /><br />Username:
+            Hannah Keating,<br /><br />Password: 1234,<br /><br />Email:
+            h.monet1104@gmail.com,<br /><br />Birthday: 11/04/1990<br />}
+          </td>
+        </tr>
+        <tr>
+          <td>Allows users to add a movie to their list of favorites</td>
+          <td>/users/:username/favorites</td>
+          <td>POST</td>
+          <td>Use "%20" for spaces (when needed)</td>
+          <td>JSON</td>
+          <td>users/Hannah%20Keating/favorites</td>
+          <td>Message</td>
+          <td>"Successfully added movie to favorites!" is displayed</td>
+        </tr>
+        <tr>
+          <td>
+            <br />Allows users to remove a movie from their list of favorites
+          </td>
+          <td>/users/:username/favorites</td>
+          <td>DELETE</td>
+          <td>Use "%20" for spaces (when needed)</td>
+          <td>None</td>
+          <td>/users/Hannah%20Keating/favorites</td>
+          <td>Message</td>
+          <td>"Successfully removed movie from favorites." is displayed</td>
+        </tr>
+        <tr>
+          <td><br />Allows existing users to deregister</td>
+          <td>/users/:Email</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>None</td>
+          <td>/users/h.monet1104@gmail.com</td>
+          <td>Message</td>
+          <td>"User Deleted." is displayed</td>
+        </tr>
+      </table>
+    </div>
+  </body>
 </html>
