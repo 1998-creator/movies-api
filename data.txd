@@ -3,16 +3,41 @@ mongoexport -d myFlixDB -c movies -o movies.json
 
 
 db.movies.findOne( { Title: "Silence of the Lambs" } )
+db.users.findOne( { Username: "Luke" } )
+
+db.movies.find( { "Genre.Name": "Thriller" } )
+
+db.movies.find( { "Genre.Name": "Thriller", "Director.Name": "Jonathan Demme"} )
+
 
 db.movies.update(
   { _id: ObjectId("6064d9c4eeacdf68db7ea6a2") },
   { $set: { Description: "Updated A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer." } }
 )
 
+db.movies.update(
+  { _id: ObjectId("606553c6eeacdf68db7ea6b0") },
+  { $set: { Description: "With the help of allies Lt. Jim Gordon (Gary Oldman) and DA Harvey Dent (Aaron Eckhart), Batman (Christian Bale) has been able to keep a tight lid on crime in Gotham City. But when a vile young criminal calling himself the Joker (Heath Ledger) suddenly throws the town into chaos, the caped Crusader begins to tread a fine line between heroism and vigilantism." } }
+)
+
+
+db.movies.update(
+  {"Director.Name" : "Christopher Nolan"},
+  { $set: { "Director.Bio" : " UPDATED BIO Christopher Edward Nolan CBE is a British-American film director, producer, and screenwriter. "}}
+)
+
+
+
 db.users.update(
   { Username: "Luke" },
   { $push: { FavoriteMovies: ObjectId("6064d9c4eeacdf68db7ea6a2") } }
 )
+
+db.users.update(
+  { Username: "Luke" },
+  { $push: { FavoriteMovies: ObjectId("606553c2eeacdf68db7ea6ad") } }
+)
+
 
 db.users.update(
   { Username: "Luke" },
@@ -66,6 +91,23 @@ let user5= {
 }
 
 db.users.insertOne(user5)
+
+
+
+
+
+let user6= {
+    Username:"Todd",
+    Password:"1678",
+    Email:"todd@gmail.com",
+    Birthday: new Date("1970-01-15")
+}
+
+db.users.insertOne(user6)
+
+db.users.remove({ Username: "Todd" })
+
+
 
 
 
@@ -304,3 +346,31 @@ db.users.update(
   { Username: "Dan" },
   { $push: { FavoriteMovies: ObjectId("606553c2eeacdf68db7ea6ac") } }
 )
+
+
+
+
+
+
+
+db.movies.update()
+  { _id: ObjectId("606553c6eeacdf68db7ea6b0") },
+   Title: "The Dark Knight",
+  Description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+  Genre: {
+    Name: "Action",
+    Description: "The action film genre is when the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."
+  },
+  Director: {
+    Name: "Christopher Nolan",
+    Bio: "Best known for his cerebral, often nonlinear, storytelling, acclaimed writer-director Christopher Nolan was born on July 30, 1970, in London, England. Over the course of 15 years of filmmaking, Nolan has gone from low-budget independent films to working on some of the biggest blockbusters ever made.",
+    Birth: "1970-07-30",
+    Death: "-"
+  },
+  ImagePath: "https://resizing.flixster.com/l_yp_jJl0uhaly5u8cK-1zklk6o=/206x305/v2/https://flxt.tmsimg.com/NowShowing/63045/63045_aa.jpg",
+  Featured: true
+}
+  
+
+db.movies.remove({_id: ObjectId("606553c6eeacdf68db7ea6b0")})
+
