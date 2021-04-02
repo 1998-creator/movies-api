@@ -1,0 +1,306 @@
+mongoexport -d myFlixDB -c movies -o movies.json
+
+
+
+db.movies.findOne( { Title: "Silence of the Lambs" } )
+
+db.movies.update(
+  { _id: ObjectId("6064d9c4eeacdf68db7ea6a2") },
+  { $set: { Description: "Updated A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer." } }
+)
+
+db.users.update(
+  { Username: "Luke" },
+  { $push: { FavoriteMovies: ObjectId("6064d9c4eeacdf68db7ea6a2") } }
+)
+
+db.users.update(
+  { Username: "Luke" },
+  { $pull: { FavoriteMovies: ObjectId("6064d9c4eeacdf68db7ea6a2") } }
+)
+
+
+//users//
+
+let user1= {
+    Username:"Luke",
+    Password:"1234",
+    Email:"luke@gmail.com",
+    Birthday: new Date("1985-02-19")
+}
+
+db.users.insertOne(user1)
+
+let user2= {
+    Username:"James",
+    Password:"12345",
+    Email:"james@gmail.com",
+    Birthday: new Date("1990-14-10")
+}
+
+db.users.insertOne(user2)
+
+let user3= {
+    Username:"Sara",
+    Password:"123456",
+    Email:"sara@gmail.com",
+    Birthday: new Date("1984-07-11")
+}
+
+db.users.insertOne(user3)
+
+let user4= {
+    Username:"Brian",
+    Password:"1234567",
+    Email:"brian@gmail.com",
+    Birthday: new Date("1995-06-08")
+}
+
+db.users.insertOne(user4)
+
+let user5= {
+    Username:"Dan",
+    Password:"1234678",
+    Email:"dan@gmail.com",
+    Birthday: new Date("1999-01-15")
+}
+
+db.users.insertOne(user5)
+
+
+
+
+
+//movies//
+
+var movie1 = {
+  Title: "Silence of the Lambs",
+  Description: "A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer.",
+  Genre: {
+    Name: "Thriller",
+    Description: "Thriller film, also known as suspense film or suspense thriller, is a broad film genre that involves excitement and suspense in the audience."
+  },
+  Director: {
+    Name: "Jonathan Demme",
+    Bio: "Robert Jonathan Demme was an American director, producer, and screenwriter.",
+    Birth: "1944",
+    Death: "2017"
+  },
+  ImagePath: "https://resizing.flixster.com/EypAJzN21QGgpl_HwES6wVj4tBI=/206x305/v2/https://flxt.tmsimg.com/assets/p13013_p_v10_aa.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie1)
+
+
+
+
+
+
+var movie2 = {
+  Title: "The Manchurian Candidate",
+  Description: "In the midst of the Gulf War, soldiers are kidnapped and brainwashed for sinister purposes.",
+  Genre: {
+    Name: "Thriller",
+    Description: "Thriller film, also known as suspense film or suspense thriller, is a broad film genre that involves excitement and suspense in the audience."
+  },
+  Director: {
+    Name: "Jonathan Demme",
+    Bio: "Robert Jonathan Demme was an American director, producer, and screenwriter.",
+    Birth: "1944",
+    Death: "2017"
+  },
+  ImagePath: "https://resizing.flixster.com/Lseulf-ACkzgU4F7DmgW4PH1DJE=/206x305/v2/https://flxt.tmsimg.com/assets/p34666_p_v10_ag.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie2)
+
+
+var movie3 = {
+  Title: "Trainwreck",
+  Description: "Having thought that monogamy was never possible, a commitment-phobic career woman may have to face her fears when she meets a good guy.",
+  Genre: {
+    Name: "Comedy",
+    Description: "Comedy is a genre of film in which the main emphasis is on humor. These films are designed to make the audience laugh through amusement and most often work by exaggerating characteristics for humorous effect."
+  },
+  Director: {
+    Name: "Judd Apatow",
+    Bio: "Judd Apatow is an American producer, writer, director, actor and stand-up comedian.",
+    Birth: "1967-01-01",
+    Death: "-"
+  },
+  ImagePath: "https://resizing.flixster.com/ceWBe3k3QMcQaaFHqaavTe4DKwY=/206x305/v2/https://flxt.tmsimg.com/assets/p11395383_p_v10_at.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie3)
+
+
+var movie4 = {
+  Title: "Reservoir Dogs ",
+  Description: " When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
+  Genre: {
+    Name: "Thriller",
+    Description: "Thriller film, also known as suspense film or suspense thriller, is a broad film genre that involves excitement and suspense in the audience."
+  },
+  Director: {
+    Name: " Quentin Tarantino",
+    Bio: " Quentin Jerome Tarantino was born in Knoxville, Tennessee. In January of 1992, first-time writer-director Tarantino's Reservoir Dogs (1992) appeared at the Sundance Film Festival. The film garnered critical acclaim and the director became a legend immediately. Two years later, he followed up Dogs success with Pulp Fiction (1994) which premiered at the Cannes film festival, winning the coveted Palme D'Or Award. At the 1995 Academy Awards, it was nominated for the best picture, best director and best original screenplay.",
+    Birth: "1963-03-27",
+    Death: "-"
+  },
+  ImagePath: "https://resizing.flixster.com/4LecGCItgvwY86F2FEhLP3qNX3A=/206x305/v2/https://flxt.tmsimg.com/NowShowing/2554/2554_aa.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie4)
+
+
+var movie5 = {
+  Title: "Toy Story",
+  Description: " A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
+  Genre: {
+    Name: "Animation",
+    Description: "Animation is a method in which pictures are manipulated to appear as moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film."
+  },
+  Director: {
+    Name: "John Lasseter",
+    Bio: "Although born in Hollywood John and his twin sister, Johanna were raised in Wittier near Los Angeles. Having made contacts in the computer industry he was quickly taken on by Lucasfilm which was bought by Steve Jobs for $5 million with a further $5 million invested as working capital and the company renamed Pixar. John soon convinced Steve that the future lay in computer animation by bringing his desk lamp to life in the short 'Luxor Jr' which was shown at a computer graphics conference and got a standing ovation. The first computer animated feature soon followed in the form of 'Toy Story' winning John an Oscar for Special Achievement to go with one he got for Animated Short Film - Tin Toy. He's also had Oscar nominations for Animated Feature - Monster Inc and Cars, Original Screenplay -Toy Story, Animated Short Story - Luxor Jr while the short Knick Knack was selected by Terry Gilliam as one of the best 10 animated films of all time.",
+    Birth: "1957-01-12",
+    Death: "-"
+  },
+  ImagePath: "https://resizing.flixster.com/K3OcAG-4Kwo36l60VzdJfL8Q7jM=/206x305/v2/https://flxt.tmsimg.com/assets/p17420_p_v12_ae.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie5)
+
+
+var movie6 = {
+  Title: "The Hangover",
+  Description: "Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.",
+  Genre: {
+    Name: "Comedy",
+    Description: "Comedy is a genre of film in which the main emphasis is on humor. These films are designed to make the audience laugh through amusement and most often work by exaggerating characteristics for humorous effect."
+  },
+  Director: {
+    Name: "Todd Phillips",
+    Bio: "Todd Phillips was born on December 20, 1970 in Brooklyn, New York City, New York, USA as Todd Bunzl. He is a producer and director, known for Joker (2019), Old School (2003) and Due Date (2010).",
+    Birth: "1970-12-20",
+    Death: "-"
+  },
+  ImagePath: "https://resizing.flixster.com/IAntAK-5jevkQ98NoNGcIDzreas=/206x305/v2/https://flxt.tmsimg.com/assets/p192248_p_v10_ap.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie6)
+
+
+var movie7 = {
+  Title: "Insomnia",
+  Description: "Two Los Angeles homicide detectives are dispatched to a northern town where the sun doesn't set to investigate the methodical murder of a local teen.",
+  Genre: {
+    Name: "Thriller",
+    Description: "Thriller film, also known as suspense film or suspense thriller, is a broad film genre that involves excitement and suspense in the audience."
+  },
+  Director: {
+    Name: "Christopher Nolan",
+    Bio: "Best known for his cerebral, often nonlinear, storytelling, acclaimed writer-director Christopher Nolan was born on July 30, 1970, in London, England. Over the course of 15 years of filmmaking, Nolan has gone from low-budget independent films to working on some of the biggest blockbusters ever made.",
+    Birth: "1970-07-30",
+    Death: "-"
+  },
+  ImagePath: "https://resizing.flixster.com/3XXKcUohI1sF7YAX5HiW3gBeIYQ=/206x305/v2/https://flxt.tmsimg.com/assets/p30021_p_v8_aa.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie7)
+
+
+var movie8 = {
+  Title: "Terminator 2: Judgment Day",
+  Description: "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her ten year old son, John Connor, from a more advanced and powerful cyborg.",
+  Genre: {
+    Name: "Action",
+    Description: "The action film genre is when the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."
+  },
+  Director: {
+    Name: "James Cameron",
+    Bio: "James Francis Cameron was born on August 16, 1954 in Kapuskasing, Ontario, Canada. He moved to the United States in 1971. He then wrote and directed The Terminator (1984), a futuristic action-thriller starring Arnold Schwarzenegger, Michael Biehn and Linda Hamilton. It was a low budget independent film, but Cameron's superb, dynamic direction made it a surprise mainstream success and it is now regarded as one of the most iconic pictures of the 1980s. After this came a string of successful, bigger budget science-fiction action films such as Aliens (1986), The Abyss (1989) and Terminator 2: Judgment Day (1991). ",
+    Birth: "1954-08-16",
+    Death: "-"
+  },
+  ImagePath: "https://resizing.flixster.com/rsteoIZDIsR_GNUZqaUe5UXD7OY=/206x305/v2/https://resizing.flixster.com/Dm0V83ItG7HunwWZyin2QeKUkEo=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzAwYTE0NjQzLTA3MGQtNDY2Yi1hZjczLTE0YTc0ZWVjMTU2ZS53ZWJw",
+  Featured: true
+}
+
+db.movies.insertOne(movie8)
+
+
+var movie9 = {
+  Title: "Mad Max: Fury Road",
+  Description: "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+  Genre: {
+    Name: "Action",
+    Description: "The action film genre is when the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."
+  },
+  Director: {
+    Name: "George Miller",
+    Bio: "George Miller is an Australian film director, screenwriter, producer, and former medical doctor. He is best known for his Mad Max franchise, with The Road Warrior (1981) and Mad Max: Fury Road (2015) being hailed as amongst the greatest action films of all time. Aside from the Mad Max films, Miller has been involved in a wide range of projects. These include the Academy Award-winning Babe (1995) and Happy Feet (2006) film series.",
+    Birth: "1945-03-03",
+    Death: "-"
+  },
+  ImagePath: "https://resizing.flixster.com/QjeBkzpqqCHcl9sk0kz_1a1Hu-M=/206x305/v2/https://flxt.tmsimg.com/NowShowing/140378/140378_ab.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie9)
+
+
+var movie10 = {
+  Title: "The Dark Knight",
+  Description: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+  Genre: {
+    Name: "Action",
+    Description: "The action film genre is when the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases."
+  },
+  Director: {
+    Name: "Christopher Nolan",
+    Bio: "Best known for his cerebral, often nonlinear, storytelling, acclaimed writer-director Christopher Nolan was born on July 30, 1970, in London, England. Over the course of 15 years of filmmaking, Nolan has gone from low-budget independent films to working on some of the biggest blockbusters ever made.",
+    Birth: "1970-07-30",
+    Death: "-"
+  },
+  ImagePath: "https://resizing.flixster.com/l_yp_jJl0uhaly5u8cK-1zklk6o=/206x305/v2/https://flxt.tmsimg.com/NowShowing/63045/63045_aa.jpg",
+  Featured: true
+}
+
+db.movies.insertOne(movie10)
+
+
+
+// add favorite movie to user//
+
+db.users.update(
+  { Username: "Luke" },
+  { $push: { FavoriteMovies: ObjectId("6064d9c4eeacdf68db7ea6a2") } }
+)
+
+db.users.update(
+  { Username: "James" },
+  { $push: { FavoriteMovies: ObjectId("606553c6eeacdf68db7ea6b0") } }
+)
+
+db.users.update(
+  { Username: "Sara" },
+  { $push: { FavoriteMovies: ObjectId("606553c3eeacdf68db7ea6af") } }
+)
+
+db.users.update(
+  { Username: "Brian" },
+  { $push: { FavoriteMovies: ObjectId("606553c2eeacdf68db7ea6ad") } }
+)
+
+db.users.update(
+  { Username: "Dan" },
+  { $push: { FavoriteMovies: ObjectId("606553c2eeacdf68db7ea6ac") } }
+)
