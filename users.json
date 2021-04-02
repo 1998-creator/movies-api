@@ -1,0 +1,79 @@
+[{
+  "_id": {
+    "$oid": "6064dc66eeacdf68db7ea6a3"
+  },
+  "Username": "Luke",
+  "Password": "1234",
+  "Email": "luke@gmail.com",
+  "Birthday": {
+    "$date": "1985-02-19T00:00:00Z"
+  },
+  "FavoriteMovies": [
+    {
+      "$oid": "6064d9c4eeacdf68db7ea6a2"
+    },
+    {
+      "$oid": "606553c2eeacdf68db7ea6ad"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6064f01ceeacdf68db7ea6a4"
+  },
+  "Username": "James",
+  "Password": "12345",
+  "Email": "james@gmail.com",
+  "Birthday": {
+    "$date": "1970-01-01T00:00:00Z"
+  },
+  "FavoriteMovies": [
+    {
+      "$oid": "606553c6eeacdf68db7ea6b0"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6064f01ceeacdf68db7ea6a5"
+  },
+  "Username": "Sara",
+  "Password": "123456",
+  "Email": "sara@gmail.com",
+  "Birthday": {
+    "$date": "1984-07-11T00:00:00Z"
+  },
+  "FavoriteMovies": [
+    {
+      "$oid": "606553c3eeacdf68db7ea6af"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6064f01ceeacdf68db7ea6a6"
+  },
+  "Username": "Brian",
+  "Password": "1234567",
+  "Email": "brian@gmail.com",
+  "Birthday": {
+    "$date": "1995-06-08T00:00:00Z"
+  },
+  "FavoriteMovies": [
+    {
+      "$oid": "606553c2eeacdf68db7ea6ad"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6064f01ceeacdf68db7ea6a7"
+  },
+  "Username": "Dan",
+  "Password": "1234678",
+  "Email": "dan@gmail.com",
+  "Birthday": {
+    "$date": "1999-01-15T00:00:00Z"
+  },
+  "FavoriteMovies": [
+    {
+      "$oid": "606553c2eeacdf68db7ea6ac"
+    }
+  ]
+}]
