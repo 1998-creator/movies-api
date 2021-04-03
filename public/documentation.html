@@ -41,17 +41,26 @@
           <td>/movies</td>
           <td>JSON</td>
           <td>
-            {<br />{ "id": 1, "Title": "Silence of the Lambs", "Description": "A
-            young FBI cadet must receive the help of an incarcerated and
-            manipulative cannibal killer to help catch another serial killer.",
-            "Genre": { "Name": "Thriller", "Description": "Thriller film, also
-            known as suspense film or suspense thriller, is a broad film genre
-            that involves excitement and suspense in the audience." },
-            "Director": { "Name": "Jonathan Demme", "Bio": "Robert Jonathan
-            Demme was an American director, producer, and screenwriter.",
-            "Birth": "1944", "Death": "2017" }, "ImagePath":
-            "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,677,1000_AL_.jpg",
-            "Featured": true }
+            {<br />{ {
+              "Genre": {
+                "Name": "Thriller",
+                "Description": "Thriller film, also known as suspense film or suspense thriller, is a film genre that involves excitement and suspense in the audience."
+              },
+              "Director": {
+                "Name": "Jonathan Demme",
+                "Bio": "Robert Jonathan Demme was an American director, producer, and screenwriter.",
+                "Birth": "1944",
+                "Death": "2017"
+              },
+              "Actors": [
+                
+              ],
+              "_id": "6064d9c4eeacdf68db7ea6a2",
+              "Title": "Silence of the Lambs",
+              "Description": "Updated A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer.",
+              "ImagePath": "https://resizing.flixster.com/EypAJzN21QGgpl_HwES6wVj4tBI=/206x305/v2/https://flxt.tmsimg.com/assets/p13013_p_v10_aa.jpg",
+              "Featured": true
+            }}
             <br />
             <br />
             Then the other four movies in the list would be displayed below this
@@ -98,12 +107,16 @@
           <td>/users</td>
           <td>JSON</td>
           <td>
-            { id: 1,<br />
-            Username: "Hannah Keating",<br />
-            Password: "1234",<br />
-            Email: "h.monet1104@gmail.com",<br />
-            Birthday: "11/04/1990",<br />
-            FavoriteMovies: [],<br />
+            {
+              "FavoriteMovies": [<br>
+                "6064d9c4eeacdf68db7ea6a2",<br>
+                "606553c2eeacdf68db7ea6ad"<br>
+              ],<br>
+              "_id": "6064dc66eeacdf68db7ea6a3",<br>
+              "Username": "Luke UPDATED",<br>
+              "Password": "1234",<br>
+              "Email": "luke@gmail.com",<br>
+              "Birthday": "1985-02-19T00:00:00.000Z"<br>
             }<br />
             <br />
             The other users in the list would be displayed below this one
@@ -125,12 +138,20 @@
           <td>PUT</td>
           <td>Use "%20" for spaces (when needed)</td>
           <td>JSON</td>
-          <td>/users/Hannah%20Keating</td>
+          <td>/users/Luke</td>
           <td>JSON</td>
           <td>
-            {<br />FavoriteMovies: [ ],<br /><br />_id: 1,<br /><br />Username:
-            Hannah Keating,<br /><br />Password: 1234,<br /><br />Email:
-            h.monet1104@gmail.com,<br /><br />Birthday: 11/04/1990<br />}
+            {<br />{
+              "FavoriteMovies": [<br>
+                "6064d9c4eeacdf68db7ea6a2",<br>
+                "606553c2eeacdf68db7ea6ad"<br>
+              ],<br>
+              "_id": "6064dc66eeacdf68db7ea6a3",<br>
+              "Username": "Luke UPDATED",<br>
+              "Password": "1234",<br>
+              "Email": "luke@gmail.com",<br>
+              "Birthday": "1985-02-19T00:00:00.000Z"<br>
+            <br />}
           </td>
         </tr>
         <tr>
@@ -139,12 +160,20 @@
           <td>GET</td>
           <td>Use "%20" for spaces (when needed)</td>
           <td>JSON</td>
-          <td>/users/Hannah%20Keating</td>
+          <td>/users/Luke</td>
           <td>JSON</td>
           <td>
-            {<br />FavoriteMovies: [ ],<br /><br />_id: 1,<br /><br />Username:
-            Hannah Keating,<br /><br />Password: 1234,<br /><br />Email:
-            h.monet1104@gmail.com,<br /><br />Birthday: 11/04/1990<br />}
+            {<br />{
+              "FavoriteMovies": [<br>
+                "6064d9c4eeacdf68db7ea6a2",<br>
+                "606553c2eeacdf68db7ea6ad"<br>
+              ],<br>
+              "_id": "6064dc66eeacdf68db7ea6a3",<br>
+              "Username": "Luke UPDATED",<br>
+              "Password": "1234",<br>
+              "Email": "luke@gmail.com",<br>
+              "Birthday": "1985-02-19T00:00:00.000Z"<br>
+            }<br />}
           </td>
         </tr>
         <tr>
@@ -153,9 +182,9 @@
           <td>POST</td>
           <td>Use "%20" for spaces (when needed)</td>
           <td>JSON</td>
-          <td>users/Hannah%20Keating/favorites</td>
+          <td>users/Luke/favorites</td>
           <td>Message</td>
-          <td>"Successfully added movie to favorites!" is displayed</td>
+          <td>Movie is added to the user's list</td>
         </tr>
         <tr>
           <td>
@@ -165,19 +194,29 @@
           <td>DELETE</td>
           <td>Use "%20" for spaces (when needed)</td>
           <td>None</td>
-          <td>/users/Hannah%20Keating/favorites</td>
+          <td>/users/Luke/favorites</td>
           <td>Message</td>
-          <td>"Successfully removed movie from favorites." is displayed</td>
+          <td>Movie is removed from the users list</td>
         </tr>
         <tr>
-          <td><br />Allows existing users to deregister</td>
-          <td>/users/:Email</td>
+          <td><br />Allows existing user's to deregister</td>
+          <td>/users/:Username</td>
           <td>DELETE</td>
           <td>None</td>
           <td>None</td>
-          <td>/users/h.monet1104@gmail.com</td>
+          <td>/users/luke</td>
           <td>Message</td>
-          <td>"User Deleted." is displayed</td>
+          <td>User is deleted from the list</td>
+        </tr>
+        <tr>
+          <td><br />Add a movie to a user's list of favorites</td>
+          <td>/users/:Username/movies/:MovieID</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>None</td>
+          <td>/users/luke/movies/"6064d9c4eeacdf68db7ea6a2"</td>
+          <td>Message</td>
+          <td>Movie is added to the user's favorites</td>
         </tr>
       </table>
     </div>
