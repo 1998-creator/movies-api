@@ -375,3 +375,6 @@ db.movies.update()
 
 db.movies.remove({_id: ObjectId("606553c6eeacdf68db7ea6b0")})
 
+
+
+mongoimport --uri mongodb+srv://payton:payton@cluster0.dfuhp.mongodb.net/myFlixDB --collection movies --type json --file movies.json
