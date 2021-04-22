@@ -57,7 +57,7 @@ app.get("/", function (req, res) {
   res.send("Welcome to Flix Fix!");
 });
 
-app.get("/movies", passport.authenticate('jwt', {session: false}), function (
+app.get("/movies", function (
   req,
   res
 ) {
